@@ -43,8 +43,20 @@ def main():
     st.title("Pick Game App")
     st.write("Welcome to the Pick Game! Try to pick a 3-digit number and win based on the bet amount and matching digits.")
     
+    # Instructions
+    st.header("Game Instructions:")
+    st.write("1. Enter a 3-digit number in the input box.")
+    st.write("2. Select your bet amount from the dropdown menu.")
+    st.write("3. Click the 'Play' button to see if you win!")
+
+    # How to Win
+    st.header("How to Win:")
+    st.write("You can win by matching digits in the following ways:")
+    st.write("- If you match all three digits in the correct order, you win the biggest prize!")
+    st.write("- If you match two digits in any order, you win a smaller prize.")
+
     # Initialize variables
-    user_pick = st.text_input("Enter your 3-digit number:")
+    user_pick = st.text_input("Enter your 3-digit number:", value="123")
     bet_amount_options = [20, 50, 100]
     bet_amount = st.selectbox("Select Bet Amount", bet_amount_options, index=0)
     total_tries = st.session_state.get("total_tries", 0)
@@ -65,7 +77,7 @@ def main():
                 st.session_state.total_lost = total_lost
                 st.session_state.random_number = random_number
                 st.write(f"The randomly generated number was: {random_number}")
-                st.header( "Game Stats ")
+                st.header("Game Stats")
                 st.write(f"Total number of tries: {total_tries}")
                 st.write(f"Number of times of wins: {total_plays}")
                 st.write(f"Total amount won: ksh{total_won}")
