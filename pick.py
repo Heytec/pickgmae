@@ -30,7 +30,7 @@ def play_pick_game(user_pick, random_number, total_tries, total_plays, bet_amoun
     if matching_digits == 3 or matching_digits == 2:
         prize = calculate_prize(matching_digits, bet_amount)
         total_won += prize
-        st.success(f"Congratulations! You matched {matching_digits} digits. You win ${prize}!")
+        st.success(f"Congratulations! You matched {matching_digits} digits. You win ksh{prize}!")
         total_plays += 1
     else:
         st.info("Sorry, no matches this time. Better luck next time!")
