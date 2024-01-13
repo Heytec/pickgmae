@@ -7,9 +7,9 @@ def generate_random_number():
 def calculate_prize(matching_digits, bet_amount):
     if matching_digits == 3:
         if bet_amount == 20:
-            return 10000
+            return 5000
         elif bet_amount == 50:
-            return 15000
+            return 10000
         elif bet_amount == 100:
             return 20000
     elif matching_digits == 2:
@@ -63,7 +63,7 @@ def main():
                 st.session_state.random_number = random_number
                 st.write(f"The randomly generated number was: {random_number}")
                 st.write(f"Total number of tries: {total_tries}")
-                st.write(f"Number of times played before winning: {total_plays}")
+                st.write(f"Number of  wins : {total_plays}")
                 st.write(f"Total amount won: Ksh{total_won}")
             else:
                 st.error("Please enter a valid 3-digit number.")
